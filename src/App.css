@@ -1,0 +1,226 @@
+body {
+  background-color: #1d2228; /* Màu nền tối */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Chiều cao toàn bộ viewport */
+  margin: 0; /* Không có khoảng cách mặc định */
+  font-family: Arial, sans-serif; /* Font chữ mặc định */
+  color: #fff; /* Màu chữ trắng */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Canh giữa nội dung */
+  width: 100%; /* Đặt chiều rộng đầy đủ */
+  max-width: 600px; /* Đặt chiều rộng tối đa */
+}
+
+h1 {
+  color: #50d890; /* Màu xanh lá cho tiêu đề */
+  text-align: center; /* Căn giữa tiêu đề */
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+.quote-box {
+  background-color: #2f353b; /* Màu nền của hộp lời khuyên */
+  border-radius: 10px; /* Bo góc hộp */
+  padding: 20px 40px; /* Khoảng cách bên trong hộp */
+  text-align: center; /* Căn giữa nội dung trong hộp */
+  height: 150px;
+  width: 400px; /* Đặt chiều rộng đầy đủ */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+  margin-bottom: 20px; /* Khoảng cách giữa các hộp lời khuyên */
+  /* ---------- */
+
+}
+
+.quote-box p {
+  font-size: 18px; /* Kích thước chữ */
+  line-height: 1.6; /* Khoảng cách dòng */
+  margin: 0; /* Không có khoảng cách mặc định */
+}
+
+.quote-buttons {
+  display: flex; /* Sử dụng flexbox cho các nút */
+  justify-content: center; /* Canh giữa các nút */
+  margin-top: 10px; /* Khoảng cách trên cho các nút */
+}
+/* ---------------------------- */
+.quote-box {
+  background-color: #2f353b;
+  border-radius: 10px;
+  padding: 20px 40px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative; /* Cho phép .circle di chuyển theo quote-box */
+  margin-bottom: 40px; /* Thêm khoảng cách dưới để tránh bị chèn lên hình tròn */
+}
+
+.quote-box h2 {
+  color: #50d890;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.quote-box p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.quote-box .pause-icon {
+  margin-top: 20px;
+}
+
+.quote-box .pause-icon div {
+  width: 10px;
+  height: 30px;
+  background-color: white;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.quote-box .circle {
+      width: 50px;
+      height: 50px;
+      background-color: #50d890;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: -25px;
+      /* Đưa vòng tròn nổi xuống dưới */
+      left: 50%;
+      transform: translateX(-50%);
+      /* Căn giữa vòng tròn */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      /* Thêm bóng để nổi lên */
+  }
+
+.quote-box .circle::after {
+  content: "";
+  font-size: 18px;
+  color: #2f353b;
+}
+
+
+.quote-box .circle svg{
+width: 24px;
+   height: 24px;
+}
+
+/* ---------------------------- */
+button {
+  margin: 5px; /* Khoảng cách giữa các nút */
+  background-color: #50d890; /* Màu nền nút */
+  color: #fff; /* Màu chữ trên nút */
+  border: none; /* Không viền */
+  border-radius: 5px; /* Bo góc nút */
+  padding: 10px 15px; /* Khoảng cách bên trong nút */
+  cursor: pointer; /* Hiển thị con trỏ chuột khi di chuột qua nút */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+button:hover {
+  background-color: #45b07b; /* Màu nền khi hover */
+}
+
+ul {
+  list-style-type: none; /* Không có biểu tượng cho danh sách */
+  padding: 0; /* Không có khoảng cách bên trong */
+  width: 100%; /* Đặt chiều rộng đầy đủ */
+}
+
+li {
+  padding: 10px; /* Khoảng cách bên trong từng phần tử danh sách */
+  border: 1px solid #ddd; /* Viền nhẹ cho từng phần tử */
+  margin-bottom: 5px; /* Khoảng cách dưới giữa các phần tử */
+  background-color: #2f353b; /* Màu nền cho từng phần tử */
+  border-radius: 5px; /* Bo góc cho từng phần tử */
+}
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Căn đều hai bên */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa các nút */
+}
+.buttons-container {
+  display: flex;
+  justify-content: space-between; /* Hoặc 'center' nếu muốn căn giữa */
+  gap: 10px; /* Khoảng cách giữa các nút */
+  flex-wrap: wrap; /* Để đảm bảo bố cục đẹp trên các kích thước màn hình khác nhau */
+}
+/* CSS cho modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Nền tối hơn cho modal để tăng độ tương phản */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #2f353b; /* Nền tối cho nội dung modal */
+  color: #ffffff; /* Màu chữ sáng cho nội dung modal */
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #ffffff; /* Màu chữ cho nút đóng */
+}
+
+.close:hover,
+.close:focus {
+  color: #ff4d4d; /* Màu khi hover để nổi bật */
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Viền nhẹ cho ô tìm kiếm */
+  border-radius: 4px; /* Bo góc cho ô tìm kiếm */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #080808;
+  padding: 8px;
+  text-align: left;
+  color: #ffffff; /* Màu chữ cho ô trong bảng */
+}
+
+th {
+  background-color: #50d890; /* Màu nền cho tiêu đề bảng */
+  color: white; /* Màu chữ cho tiêu đề bảng */
+}
+
+tr:nth-child(even) {
+  background-color: #444; /* Màu nền cho các hàng chẵn */
+}
+
+h2, li {
+  color: #ffffff; /* Màu chữ cho tiêu đề và các mục trong danh sách */
+}
